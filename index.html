@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Bosch Sensortec | Sensor API Reference</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"> <meta content="INDEX,FOLLOW" name="robots" lang="en-US"> <meta content="Bosch Sensortec Documenation" name="description" lang="en-US"> <meta content="MEMS, Sensors, Sensor, Accelerometer, Magnetometer, Gyroscope, Environmental, Pressure, Smart, IoT, Optical, Geomagnetic, eCompass, IMU, Inertial Measurement Unit, Hubs, Node, Bosch Sensortec, Home, Documenation" name="keywords" lang="en-US"> <link href="images/favicon.ico" rel="Shortcut Icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Bootstrap CSS  -->
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" href="styles/sidebar-menu.css" />
+  <link rel="stylesheet" href="styles/shared.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <div class="container-fluid topBar">
+    <div class="container main">
+      <div class="row mt-3 m-0">
+        <div class="logo">
+          <a><img src="images/bosch_logo.png" /></a>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid p-0">
+            <div id="sidebarCollapse">
+              <div class="menuIcon"><img src="images/list-view-mobile.png" /></div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link " href="index.html" id="overview">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.bosch-sensortec.com/">Bosch Sensortec Website
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://community.bosch-sensortec.com/">Community</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://github.com/BoschSensortec">Github </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.bosch.de/en/contact/">Contact </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="input-group mb-3 float-right searchInput" style="z-index:999">
+          <form id="search" action="">
+              <input class="form-control" name="search" id="search1" aria-describedby="basic-addon2" aria-label="Search" placeholder="Search" type="text" required >
+			        <span class="searchIcon"><img src="images/search.png"/></span>
+          </form>
+        </div>
+        <div class="float-right lang">
+          <img src="images/lang_en.png" />
+        </div>
+      </div>
+      <div class="row m-0 p-0">
+        <div class="wrapper">
+          <!-- Sidebar  -->
+          <div class="sticky" id="sideNav">
+            <div class="closeIcon"><img src="images/close.png" /></div>
+            <section>
+              <ul class="sidebar-menu">
+                <li>
+                  <a href="#" id="overview">Sensor API</a>
+                  <ul class="sidebar-submenu">
+                    <li>
+						<a href="#overview" class="subHeadAction">Overview</a>
+						<ul class="sidebar-submenu">
+							<li>
+							<a href="#example_usage" class="subHeadAction">Example usage</a>
+							</li>
+							<li>
+							  <a href="#experiment_api" class="subHeadAction">Experiment API using COINES</a>
+							</li>
+							<li>
+							  <a href="#license" class="subHeadAction">License</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+					<a href="#" id="sensor_Api">API Reference</a>
+					<ul class="sidebar-submenu">
+                    <li>
+                        <a href="#" id="group__bma400">BMA400</a>
+                        <ul class="sidebar-submenu">
+                          <li>
+                            <a href="#" id="group__bma400_api_init">Initialization</a>
+                            <ul class="sidebar-submenu">
+                              <li>
+                                <a href="#group__bma400_api_init" class="subHeadLink subHeadAction">bma400_init</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="#" id="group__bma400_api_data">Data read out</a>
+                            <ul class="sidebar-submenu">
+                              <li>	  
+                                <a href="#bma400_api_bma400_get_accel_data" class="subHeadLink subHeadAction">bma400_get_accel_data</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="#" id="group__bma400_api_config">Configuration</a>
+                            <ul class="sidebar-submenu">
+                              <li>
+                                <a href="#bma400_api_bma400_set_power_mode" class="subHeadLink subHeadAction">bma400_set_power_mode</a>
+                                <a href="#bma400_api_bma400_get_power_mode" class="subHeadLink subHeadAction">bma400_get_power_mode</a>
+                                <a href="#bma400_api_bma400_set_sensor_conf" class="subHeadLink subHeadAction">bma400_set_sensor_conf</a>
+                                <a href="#bma400_api_bma400_get_sensor_conf" class="subHeadLink subHeadAction">bma400_get_sensor_conf</a>
+                                <a href="#bma400_api_bma400_set_device_conf" class="subHeadLink subHeadAction">bma400_set_device_conf</a>
+                                <a href="#bma400_api_bma400_get_device_conf" class="subHeadLink subHeadAction">bma400_get_device_conf</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="#" id="group__bma400_api_fifo">FIFO</a>
+                            <ul class="sidebar-submenu">
+                              <li>
+                                <a href="#bma400_api_bma400_set_fifo_flush" class="subHeadLink subHeadAction">bma400_set_fifo_flush</a>
+                                <a href="#bma400_api_bma400_get_fifo_data" class="subHeadLink subHeadAction">bma400_get_fifo_data</a>
+                                <a href="#bma400_api_bma400_extract_accel" class="subHeadLink subHeadAction">bma400_extract_accel</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="#" id="group__bma400_api_interrupt">Interrupt</a>
+                            <ul class="sidebar-submenu">
+                              <li>
+                                <a href="#bma400_api_bma400_get_interrupt_status" class="subHeadLink subHeadAction">bma400_get_interrupt_status</a>
+                                <a href="#bma400_api_bma400_get_interrupts_enabled" class="subHeadLink subHeadAction">bma400_get_interrupts_enabled</a>
+                                <a href="#bma400_api_bma400_enable_interrupt" class="subHeadLink subHeadAction">bma400_enable_interrupt</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="#" id="group__bma400_api_register">Registers</a>
+                            <ul class="sidebar-submenu">
+                              <li>
+                                <a href="#bma400_api_bma400_set_regs" class="subHeadLink subHeadAction">bma400_set_regs</a>
+                                <a href="#bma400_api_bma400_get_regs" class="subHeadLink subHeadAction">bma400_get_regs</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="#" id="group__bma400_api_system">System</a>
+                            <ul class="sidebar-submenu">
+                              <li>
+                                <a href="#bma400_api_bma400_soft_reset" class="subHeadLink subHeadAction">bma400_soft_reset</a>
+                                <a href="#bma400_api_bma400_perform_self_test" class="subHeadLink subHeadAction">bma400_perform_self_test</a>
+                                <a href="#bma400_api_bma400_get_temperature_data" class="subHeadLink subHeadAction">bma400_get_temperature_data</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="#" id="group__bma400_api_sc">Step counter</a>
+                            <ul class="sidebar-submenu">
+                              <li>
+                                <a href="#bma400_api_bma400_get_steps_counted" class="subHeadLink subHeadAction">bma400_get_steps_counted</a>
+                                <a href="#bma400_api_bma400_set_step_counter_param" class="subHeadLink subHeadAction">bma400_set_step_counter_param</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="#" id="group__bma400_examples">Examples</a>
+                            <ul class="sidebar-submenu">
+                              <li>
+                                <a href="#" id="group__bma400_examples_accelerometer" class="subHeadLink">Accelerometer read</a>
+                                <a href="#" id="group__bma400_examples_basic" class="subHeadLink">Basic initialization</a>
+                                <a href="#" id="group__bma400_examples_fifo" class="subHeadLink">FIFO read</a>
+                                <a href="#" id="group__bma400_examples_self_test" class="subHeadLink">Self test</a>
+                                <a href="#" id="group__bma400_examples_step_counter" class="subHeadLink">Step counter</a>
+                                <a href="#" id="group__bma400_examples_tap_detection" class="subHeadLink">Tap detection</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                    </li>
+                 
+					</ul>
+					</ul>
+                  </li>
+                </li>
+             
+			  </ul>
+            </section>
+            <div class="headerLinks">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.bosch-sensortec.com/">Bosch Sensortec Website</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://community.bosch-sensortec.com/">Community</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://github.com/BoschSensortec">API Github</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.bosch.de/en/contact/">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Page Content  -->
+          <div id="content">
+          </div>
+          <button onclick="topFunction()" id="goTop" title="Go to top"><img src="images/up.png" /></button>
+        </div>
+      </div>
+    </div>
+    <!-- Footer  -->
+    <div class="footer">
+      <div class="container mb-5">
+        <div class="M-FooterNavigation">
+          <div class="row my-4">
+
+            <div class="col-lg-4 col-sm-12">
+              <div class="M-FooterNavigation__navHeading">Stay up to date</div>
+              <ul class="M-FooterNavigation__list u-UnstyledList">
+                <li><a href="http://www.bosch-presse.de/pressportal/de/en/" class="M-FooterNavigation__links">Press</a>
+                </li>
+              </ul>
+              <div class="M-FooterNavigation__social">
+                <div class="M-SocialShareIcons M-SocialShareIcons--leftAligned">
+                  <div class="M-SocialShareIcons__icons M-SocialShareIcons__icons--leftAligned">
+                    <a href="https://www.facebook.com/BoschGlobal" title="Facebook" class="M-SocialShareIcons__icon"
+                      target="_blank" rel="noopener noreferrer">
+                      <img src="images/facebook-frame(1).png" />
+                    </a>
+                    <a href="https://www.youtube.com/BoschGlobal" title="Youtube" class="M-SocialShareIcons__icon"
+                      target="_blank" rel="noopener noreferrer">
+                      <img src="images/youtube-frame.png" />
+                    </a>
+                    <a href="https://www.twitter.com/BoschGlobal" title="Twitter" class="M-SocialShareIcons__icon"
+                      target="_blank" rel="noopener noreferrer">
+                      <img src="images/twitter-frame.png" />
+                    </a>
+                    <a href="https://www.linkedin.com/company/bosch/" title="LinkedIn" class="M-SocialShareIcons__icon"
+                      target="_blank" rel="noopener noreferrer">
+                      <img src="images/linkedin-frame.png" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="M-FooterNavigation__navHeading">Get in touch</div>
+              <ul class="M-FooterNavigation__list u-UnstyledList">
+                <li><a href="https://www.bosch.de/en/contact/" class="M-FooterNavigation__links">Contact</a></li>
+                <li><a href="https://www.bosch.com/licenses-and-patents/" class="M-FooterNavigation__links">Licences
+                    &amp; Patents</a></li>
+                <li><a href="http://purchasing.bosch.com/" class="M-FooterNavigation__links">Purchasing &amp;
+                    Logistics</a></li>
+              </ul>
+              <hr class="M-FooterNavigation__horizontalLine u-HorizontalLine">
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="M-FooterNavigation__blockInstance">
+                <div class="M-FooterNavigation__blockInstance__heading">You are on</div>
+                <div class="M-FooterNavigation__blockInstance__name">Bosch Sensortec API Documenation</div>
+                <div class="A-Link A-Link--primary A-Link--no-margins">
+                  <a class="A-Link__link A-Link__link--primary A-Link__link--small" target="_self"
+                    href="https://www.bosch.de/en/websites-worldwide/">
+                    <span class="A-Link__linkText">Bosch worldwide</span>
+                  </a>
+                </div>
+              </div>
+              <div class="M-FooterNavigation__blockApps">
+                <div class="M-FooterNavigation__blockApps__heading">All Bosch apps</div>
+                <div class="A-Link A-Link--primary A-Link--no-margins">
+                  <a class="A-Link__link A-Link__link--primary A-Link__link--small" target="_self"
+                    href="https://appcenter.bosch.com/">
+                    <span class="A-Link__linkText">Bosch App Center</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="copyright">
+        <li> © Bosch Sensortec GmbH 2019, all rights reserved </li>
+      </ul>
+      <ul class="footerLinks">
+        <li><a href="https://www.bosch-sensortec.com/bst/corporate_information">Corporate information</a></li>
+        <li><a href="https://www.bosch-sensortec.com/bst/privacy_statement">Privacy Statement</a></li>
+        <li><a href="https://www.bosch-sensortec.com/bst/legal_note">Legal Note</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- Js files  -->
+  <script src="js/bootstrap.min.js"> </script>
+  <script src="js/popper.min.js"> </script>
+  <script src="js/jquery-3.0.0.min.js"></script>
+  <script src="js/sidebar-menu.js"></script>
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+  <script>
+    $.sidebarMenu($('.sidebar-menu'))
+  </script>
+  <script>
+    //Scroll to top
+    window.onscroll = function () {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.documentElement.scrollTop > 20) {
+        document.getElementById("goTop").style.display = "block";
+      } else {
+        document.getElementById("goTop").style.display = "none";
+      }
+    }
+
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
+    function link(page) {
+      window.scrollTo(0, 0);
+      location.hash = "" + page;
+      loadPage(page);
+    }
+  </script>
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
